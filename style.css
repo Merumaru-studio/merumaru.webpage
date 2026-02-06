@@ -4,46 +4,77 @@ body {
     font-family: Verdana, Arial, sans-serif;
     margin: 0;
     padding: 0;
+    font-size: 12px; /* Retro small font feel */
 }
 
 #container {
     width: 760px;
-    margin: 0 auto;
+    margin: 20px auto; /* Add some top margin for breathing room */
     background-color: #1a1a1a;
     border: 2px solid #444;
+    box-shadow: 0 0 10px #333; /* Subtle outer glow for depth */
+    -webkit-box-shadow: 0 0 10px #333; /* For iOS 5 compatibility */
 }
 
 #header {
-    background: #2b2b2b;
+    background: -webkit-linear-gradient(top, #3a3a3a, #1a1a1a); /* Gentle gradient for 2005 polish */
+    background: linear-gradient(to bottom, #3a3a3a, #1a1a1a);
     padding: 20px;
     border-bottom: 2px solid #444;
+    text-align: center; /* Center for indie vibe */
 }
 
 #header h1 {
     margin: 0;
     color: #66ccff;
+    text-shadow: 0 0 5px #0099ff; /* Neon glow effect */
+    -webkit-transition: text-shadow 0.3s ease; /* Smooth transition */
+    transition: text-shadow 0.3s ease;
+}
+
+#header h1:hover {
+    text-shadow: 0 0 10px #00ccff; /* Intensify glow on hover */
 }
 
 #nav {
     background: #000;
     padding: 10px;
     border-bottom: 2px solid #444;
+    text-align: center; /* Center nav for retro simplicity */
 }
 
 #nav a {
     color: #00ccff;
-    margin-right: 15px;
+    margin: 0 15px; /* Even spacing */
     text-decoration: none;
     font-weight: bold;
+    text-shadow: 0 0 3px #0066cc; /* Subtle glow on links */
+    -webkit-transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 #nav a:hover {
+    color: #ffffff;
     text-decoration: underline;
+    text-shadow: 0 0 8px #00ccff; /* Brighter glow on hover */
 }
 
 #content {
     padding: 20px;
     line-height: 1.5em;
+    background: #222; /* Slightly lighter for contrast */
+    border: 1px solid #333; /* Inset feel */
+    box-shadow: inset 0 0 5px #000; /* Inner shadow for depth */
+    -webkit-box-shadow: inset 0 0 5px #000;
+}
+
+#content p {
+    margin-bottom: 15px; /* Better paragraph spacing */
+}
+
+#content h2 {
+    color: #99ccff;
+    text-shadow: 0 0 3px #3366cc; /* Glow on subheadings */
 }
 
 #footer {
@@ -51,9 +82,25 @@ body {
     background: #000;
     padding: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px; /* Smaller for footer */
+    color: #999;
+}
+
+#footer a {
+    color: #66ccff;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: underline;
 }
 
 a {
     color: #33ccff;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff;
 }
