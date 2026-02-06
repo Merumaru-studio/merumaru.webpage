@@ -5,116 +5,18 @@ body {
     margin: 0;
     padding: 0;
     font-size: 12px; /* Retro small font feel */
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px);
-    background-size: 100px 100px, 150px 150px, 200px 200px;
-    background-position: 0 0, 30px 30px, 60px 60px;
-    z-index: -2;
-    -webkit-animation: twinkle 4s infinite alternate linear, moveStarsSlow 100s linear infinite;
-    animation: twinkle 4s infinite alternate linear, moveStarsSlow 100s linear infinite;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.5) 2px, transparent 2px),
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px);
-    background-size: 300px 300px, 250px 250px;
-    background-position: 0 0, 50px 50px;
-    z-index: -1;
-    -webkit-animation: twinkle 3s infinite alternate linear, moveStarsFast 50s linear infinite;
-    animation: twinkle 3s infinite alternate linear, moveStarsFast 50s linear infinite;
-}
-
-@-webkit-keyframes twinkle {
-    0% { background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px); }
-    25% { background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px); }
-    50% { background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px); }
-    75% { background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px); }
-    100% { background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px); }
-}
-
-@keyframes twinkle {
-    0% { background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px); }
-    25% { background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px); }
-    50% { background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px); }
-    75% { background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px); }
-    100% { background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px); }
-}
-
-@-webkit-keyframes moveStarsSlow {
-    0% { background-position: 0 0, 30px 30px, 60px 60px; }
-    100% { background-position: -100px 0, -130px 30px, -160px 60px; }
-}
-
-@keyframes moveStarsSlow {
-    0% { background-position: 0 0, 30px 30px, 60px 60px; }
-    100% { background-position: -100px 0, -130px 30px, -160px 60px; }
-}
-
-@-webkit-keyframes moveStarsFast {
-    0% { background-position: 0 0, 50px 50px; }
-    100% { background-position: -300px 0, -350px 50px; }
-}
-
-@keyframes moveStarsFast {
-    0% { background-position: 0 0, 50px 50px; }
-    100% { background-position: -300px 0, -350px 50px; }
+    background: -webkit-linear-gradient(top, #1a1a1a, #111); /* Subtle dreamy gradient */
+    background: linear-gradient(to bottom, #1a1a1a, #111);
 }
 
 #container {
     width: 760px;
     margin: 20px auto; /* Add some top margin for breathing room */
-    background-color: rgba(26,26,26,0.8); /* Semi-transparent for background visibility */
+    background-color: rgba(26,26,26,0.9); /* Slightly less transparent for professionalism */
     border: 2px solid #444;
-    box-shadow: 0 0 10px #333; /* Subtle outer glow for depth */
-    -webkit-box-shadow: 0 0 10px #333; /* For iOS 5 compatibility */
+    border-radius: 8px; /* Soft rounded corners for dreamy feel */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Softer shadow for depth */
+    -webkit-box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* For iOS 5 compatibility */
     position: relative;
     z-index: 1;
 }
@@ -124,6 +26,8 @@ body::after {
     background: linear-gradient(to bottom, #3a3a3a, #1a1a1a);
     padding: 20px;
     border-bottom: 2px solid #444;
+    border-top-left-radius: 6px; /* Rounded top for container match */
+    border-top-right-radius: 6px;
     text-align: center; /* Center for indie vibe */
 }
 
@@ -131,35 +35,15 @@ body::after {
     margin: 0;
     font-size: 36px; /* Larger for impact */
     color: #66ccff;
-    text-shadow: 0 0 5px #0099ff, 0 0 10px #0099ff, 0 0 15px #00ccff; /* Enhanced neon glow */
-    -webkit-animation: neonFlicker 1.5s infinite alternate;
-    animation: neonFlicker 1.5s infinite alternate;
+    text-shadow: 0 0 5px rgba(0, 153, 255, 0.7), 0 0 10px rgba(0, 153, 255, 0.5); /* Soft, steady glow for dreamy effect */
     -webkit-transition: text-shadow 0.3s ease; /* Smooth transition */
     transition: text-shadow 0.3s ease;
-    letter-spacing: 2px; /* Spaced out for retro feel */
+    letter-spacing: 1px; /* Slight spacing for professional look */
     text-transform: uppercase; /* All caps for boldness */
 }
 
 #header h1:hover {
-    text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #33ffff; /* Intensify glow on hover */
-}
-
-@-webkit-keyframes neonFlicker {
-    0% { text-shadow: 0 0 5px #0099ff, 0 0 10px #0099ff, 0 0 15px #00ccff; }
-    20% { text-shadow: 0 0 3px #0099ff, 0 0 6px #0099ff, 0 0 9px #00ccff; }
-    40% { text-shadow: 0 0 5px #0099ff, 0 0 10px #0099ff, 0 0 15px #00ccff; }
-    60% { text-shadow: 0 0 2px #0099ff, 0 0 4px #0099ff, 0 0 6px #00ccff; }
-    80% { text-shadow: 0 0 5px #0099ff, 0 0 10px #0099ff, 0 0 15px #00ccff; }
-    100% { text-shadow: 0 0 3px #0099ff, 0 0 6px #0099ff, 0 0 9px #00ccff; }
-}
-
-@keyframes neonFlicker {
-    0% { text-shadow: 0 0 5px #0099ff, 0 0 10px #0099ff, 0 0 15px #00ccff; }
-    20% { text-shadow: 0 0 3px #0099ff, 0 0 6px #0099ff, 0 0 9px #00ccff; }
-    40% { text-shadow: 0 0 5px #0099ff, 0 0 10px #0099ff, 0 0 15px #00ccff; }
-    60% { text-shadow: 0 0 2px #0099ff, 0 0 4px #0099ff, 0 0 6px #00ccff; }
-    80% { text-shadow: 0 0 5px #0099ff, 0 0 10px #0099ff, 0 0 15px #00ccff; }
-    100% { text-shadow: 0 0 3px #0099ff, 0 0 6px #0099ff, 0 0 9px #00ccff; }
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.8), 0 0 20px rgba(51, 255, 255, 0.6); /* Gentle intensify on hover */
 }
 
 #nav {
@@ -172,25 +56,26 @@ body::after {
 #nav a {
     color: #00ccff;
     margin: 0 15px; /* Even spacing */
-    text-decoration: underline; /* Always underline for Geocities feel */
+    text-decoration: none; /* Remove underline for more professional look */
     font-weight: bold;
-    text-shadow: 0 0 3px #0066cc; /* Subtle glow on links */
+    text-shadow: 0 0 3px rgba(0, 102, 204, 0.5); /* Subtle glow on links */
     -webkit-transition: color 0.3s ease, text-shadow 0.3s ease;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 #nav a:hover {
     color: #ffffff;
-    text-shadow: 0 0 8px #00ccff; /* Brighter glow on hover */
+    text-decoration: underline; /* Underline on hover for interaction */
+    text-shadow: 0 0 8px rgba(0, 204, 255, 0.7); /* Brighter glow on hover */
 }
 
 #nav a:visited {
-    color: #9933ff; /* Purple for visited links, classic web */
+    color: #99ccff; /* Softer blue for visited, less purple for professionalism */
 }
 
 #content {
     padding: 20px;
-    line-height: 1.5em;
+    line-height: 1.6em; /* Slightly more spacing for readability */
     background: #222; /* Slightly lighter for contrast */
     border: 1px solid #333; /* Inset feel */
     box-shadow: inset 0 0 5px #000; /* Inner shadow for depth */
@@ -203,16 +88,18 @@ body::after {
 
 #content h2 {
     color: #99ccff;
-    text-shadow: 0 0 3px #3366cc; /* Glow on subheadings */
+    text-shadow: 0 0 3px rgba(51, 102, 204, 0.5); /* Soft glow on subheadings */
 }
 
 #footer {
     border-top: 2px solid #444;
-    background: #000 url('http://www.animatedgif.net/underconstruction/5consbar2_e0.gif') repeat-x center top;
-    padding: 20px 10px 10px;
+    background: #000;
+    padding: 10px;
     text-align: center;
     font-size: 11px; /* Smaller for footer */
     color: #999;
+    border-bottom-left-radius: 6px; /* Rounded bottom for container match */
+    border-bottom-right-radius: 6px;
 }
 
 #footer a {
@@ -226,15 +113,16 @@ body::after {
 
 a {
     color: #33ccff;
-    text-decoration: underline; /* Geocities vibe */
+    text-decoration: none; /* Professional no underline */
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
 }
 
 a:hover {
     color: #ffffff;
+    text-decoration: underline;
 }
 
 a:visited {
-    color: #9933ff;
+    color: #99ccff;
 }
