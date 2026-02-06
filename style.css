@@ -34,7 +34,7 @@ body {
 #header h1 {
     margin: 0;
     font-size: 36px; /* Larger for impact */
-    color: #66ccff;
+    color: #A5D8FF; /* Light Blue from Toy Story for calm, dreamy feel */
     text-shadow: 0 0 5px rgba(0, 153, 255, 0.7), 0 0 10px rgba(0, 153, 255, 0.5); /* Soft, steady glow for dreamy effect */
     -webkit-transition: text-shadow 0.3s ease; /* Smooth transition */
     transition: text-shadow 0.3s ease;
@@ -54,7 +54,7 @@ body {
 }
 
 #nav a {
-    color: #00ccff;
+    color: #00FFFF; /* Cyan from Monsters, Inc. for energy and whimsy */
     margin: 0 15px; /* Even spacing */
     text-decoration: none; /* Remove underline for more professional look */
     font-weight: bold;
@@ -70,7 +70,7 @@ body {
 }
 
 #nav a:visited {
-    color: #99ccff; /* Softer blue for visited, less purple for professionalism */
+    color: #ADD8E6; /* Light Blue from Monsters, Inc. for softer visited links */
 }
 
 #content {
@@ -87,7 +87,7 @@ body {
 }
 
 #content h2 {
-    color: #99ccff;
+    color: #87CEEB; /* Sky Blue from Finding Nemo for dreamy, oceanic calm */
     text-shadow: 0 0 3px rgba(51, 102, 204, 0.5); /* Soft glow on subheadings */
 }
 
@@ -103,7 +103,7 @@ body {
 }
 
 #footer a {
-    color: #66ccff;
+    color: #32CD32; /* Lime Green from Monsters, Inc. for a happy accent */
     text-decoration: none;
 }
 
@@ -112,7 +112,7 @@ body {
 }
 
 a {
-    color: #33ccff;
+    color: #FF4500; /* Orange Red from Finding Nemo for vibrant, happy links */
     text-decoration: none; /* Professional no underline */
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
@@ -124,5 +124,5 @@ a:hover {
 }
 
 a:visited {
-    color: #99ccff;
+    color: #90EE90; /* Light Green from Toy Story 2 for optimistic visited links */
 }
