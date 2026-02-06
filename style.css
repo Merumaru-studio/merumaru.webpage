@@ -5,12 +5,50 @@ body {
     margin: 0;
     padding: 0;
     font-size: 12px; /* Retro small font feel */
+    background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px, 200px 200px;
+    background-position: 0 0, 30px 30px, 60px 60px;
+    -webkit-animation: twinkle 4s infinite alternate;
+    animation: twinkle 4s infinite alternate;
+}
+
+@-webkit-keyframes twinkle {
+    0% { background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px); }
+    50% { background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px); }
+    100% { background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px); }
+}
+
+@keyframes twinkle {
+    0% { background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px); }
+    50% { background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px); }
+    100% { background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px); }
 }
 
 #container {
     width: 760px;
     margin: 20px auto; /* Add some top margin for breathing room */
-    background-color: #1a1a1a;
+    background-color: rgba(26,26,26,0.8); /* Semi-transparent for background visibility */
     border: 2px solid #444;
     box-shadow: 0 0 10px #333; /* Subtle outer glow for depth */
     -webkit-box-shadow: 0 0 10px #333; /* For iOS 5 compatibility */
@@ -28,12 +66,22 @@ body {
     margin: 0;
     color: #66ccff;
     text-shadow: 0 0 5px #0099ff; /* Neon glow effect */
+    -webkit-animation: blinker 1.5s linear infinite;
+    animation: blinker 1.5s linear infinite;
     -webkit-transition: text-shadow 0.3s ease; /* Smooth transition */
     transition: text-shadow 0.3s ease;
 }
 
 #header h1:hover {
     text-shadow: 0 0 10px #00ccff; /* Intensify glow on hover */
+}
+
+@-webkit-keyframes blinker {
+    50% { opacity: 0.5; }
+}
+
+@keyframes blinker {
+    50% { opacity: 0.5; }
 }
 
 #nav {
@@ -46,7 +94,7 @@ body {
 #nav a {
     color: #00ccff;
     margin: 0 15px; /* Even spacing */
-    text-decoration: none;
+    text-decoration: underline; /* Always underline for Geocities feel */
     font-weight: bold;
     text-shadow: 0 0 3px #0066cc; /* Subtle glow on links */
     -webkit-transition: color 0.3s ease, text-shadow 0.3s ease;
@@ -55,8 +103,11 @@ body {
 
 #nav a:hover {
     color: #ffffff;
-    text-decoration: underline;
     text-shadow: 0 0 8px #00ccff; /* Brighter glow on hover */
+}
+
+#nav a:visited {
+    color: #9933ff; /* Purple for visited links, classic web */
 }
 
 #content {
@@ -97,10 +148,15 @@ body {
 
 a {
     color: #33ccff;
+    text-decoration: underline; /* Geocities vibe */
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
 }
 
 a:hover {
     color: #ffffff;
+}
+
+a:visited {
+    color: #9933ff;
 }
