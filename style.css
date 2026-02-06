@@ -1,207 +1,116 @@
 body {
-    background-color: #002855; /* Deep Blue from Toy Story for a dreamy night sky base */
-    color: #e6e6e6;
-    font-family: 'Comic Sans MS', Verdana, Arial, sans-serif; /* Playful font for extreme Pixar whimsy */
+    background-color: #000000; /* Black background typical for early 2000s Pixar site */
+    color: #ffffff; /* White text */
+    font-family: Helvetica, Arial, sans-serif; /* Common font for 2005 sites */
     margin: 0;
     padding: 0;
-    font-size: 14px; /* Slightly larger for bold impact */
-    background: -webkit-radial-gradient(center, ellipse, #002855 0%, #191970 100%); /* Extreme dreamy gradient inspired by Finding Nemo depths */
-    background: radial-gradient(ellipse at center, #002855 0%, #191970 100%);
-    -webkit-animation: dreamyPulse 10s infinite alternate ease-in-out;
-    animation: dreamyPulse 10s infinite alternate ease-in-out;
-}
-
-@-webkit-keyframes dreamyPulse {
-    0% { background-color: #002855; }
-    100% { background-color: #4682B4; } /* Pulse to Steel Blue from Monsters, Inc. for happy energy */
-}
-
-@keyframes dreamyPulse {
-    0% { background-color: #002855; }
-    100% { background-color: #4682B4; }
+    font-size: 12px; /* Retro small font */
 }
 
 #container {
-    width: 800px; /* Wider for extreme presence */
-    margin: 40px auto; /* More breathing room */
-    background-color: rgba(26,26,26,0.7); /* More transparent to let dreamy background shine */
-    border: 4px double #A7C957; /* Olive Green border from A Bug's Life for natural pop */
-    border-radius: 20px; /* Extremely rounded for soft, happy feel */
-    box-shadow: 0 0 30px rgba(255, 218, 185, 0.8), inset 0 0 20px rgba(0, 255, 255, 0.5); /* Peach Puff glow from The Incredibles mixed with cyan */
-    -webkit-box-shadow: 0 0 30px rgba(255, 218, 185, 0.8), inset 0 0 20px rgba(0, 255, 255, 0.5);
-    position: relative;
-    z-index: 1;
-    -webkit-transform: perspective(1000px) rotateY(0deg);
-    transform: perspective(1000px) rotateY(0deg);
-    -webkit-transition: transform 0.5s ease;
-    transition: transform 0.5s ease;
-}
-
-#container:hover {
-    -webkit-transform: perspective(1000px) rotateY(5deg); /* Extreme 3D tilt on hover for cool interaction */
-    transform: perspective(1000px) rotateY(5deg);
+    width: 800px; /* Fixed width centered layout, common in 2005 */
+    margin: 0 auto;
+    background-color: #000000;
+    border: none; /* No borders for simple look */
 }
 
 #header {
-    background: -webkit-linear-gradient(top, #FBE317 0%, #FF4500 100%); /* Yellow to Orange Red gradient from Toy Story and Finding Nemo for extreme happiness */
-    background: linear-gradient(to bottom, #FBE317 0%, #FF4500 100%);
-    padding: 40px;
-    border-bottom: 4px dashed #32CD32; /* Lime Green dash from Monsters, Inc. */
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
+    background-color: #000000;
+    padding: 20px;
     text-align: center;
-    -webkit-animation: bounceIn 2s infinite alternate;
-    animation: bounceIn 2s infinite alternate;
-}
-
-@-webkit-keyframes bounceIn {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.05); } /* Extreme bouncy animation for fun Pixar vibe */
-}
-
-@keyframes bounceIn {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.05); }
 }
 
 #header h1 {
     margin: 0;
-    font-size: 48px; /* Extremely large for impact */
-    color: #00FFFF; /* Cyan from Monsters, Inc. for energetic glow */
-    text-shadow: 0 0 15px #FFDAB9, 0 0 30px #B22222, 0 0 45px #228B22; /* Multi-layer glow from The Incredibles and A Bug's Life */
-    -webkit-transition: text-shadow 0.5s ease, color 0.5s ease;
-    transition: text-shadow 0.5s ease, color 0.5s ease;
-    letter-spacing: 4px; /* Extreme spacing */
+    font-size: 48px;
+    color: #ffffff;
     text-transform: uppercase;
-    font-style: italic; /* Slanted for dynamic feel */
+    letter-spacing: 2px;
+    position: relative;
 }
 
-#header h1:hover {
-    color: #FFFACD; /* Lemon Yellow from Toy Story 2 */
-    text-shadow: 0 0 30px #9370DB, 0 0 60px #87CEEB, 0 0 90px #90EE90; /* Extreme purple-blue-green glow cascade */
+#header h1::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url('lamp.gif') no-repeat; /* Would have a lamp image or GIF for bouncing animation */
+    /* For text approximation, use CSS animation for bouncing 'i' */
+}
+
+#header h1 span.bounce {
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+@-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
 }
 
 #nav {
-    background: #4B0082; /* Indigo Purple from Monsters, Inc. for mysterious yet happy base */
-    padding: 15px;
-    border-bottom: 4px dotted #D36135; /* Coral Red dots from A Bug's Life */
+    background-color: #333333; /* Dark gray for nav bar */
+    padding: 10px;
     text-align: center;
-    -webkit-animation: slideIn 1.5s infinite alternate;
-    animation: slideIn 1.5s infinite alternate;
-}
-
-@-webkit-keyframes slideIn {
-    0% { transform: translateX(-10px); }
-    100% { transform: translateX(10px); } /* Extreme sliding for cool effect */
-}
-
-@keyframes slideIn {
-    0% { transform: translateX(-10px); }
-    100% { transform: translateX(10px); }
 }
 
 #nav a {
-    color: #B81D13; /* Red from Toy Story for bold accents */
-    margin: 0 20px;
-    text-decoration: wavy underline #20B2AA; /* Wavy underline with Light Sea Green from Finding Nemo */
+    color: #00ccff; /* Blue links */
+    margin: 0 10px;
+    text-decoration: none;
     font-weight: bold;
-    font-size: 16px; /* Larger for extreme visibility */
-    text-shadow: 0 0 10px #A8E4A0; /* Light Green glow from Toy Story */
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+    padding: 5px 10px;
+    background-color: #555555; /* Gray buttons */
+    border: 1px solid #777777;
+    border-radius: 3px; /* Slight round for button look */
 }
 
 #nav a:hover {
-    color: #228B22; /* Forest Green from A Bug's Life and The Incredibles */
-    text-shadow: 0 0 20px #FF4500, 0 0 40px #FBE317; /* Extreme orange-yellow glow */
-    transform: rotate(5deg); /* Rotate on hover for fun */
-    display: inline-block;
-}
-
-#nav a:visited {
-    color: #800000; /* Maroon Red from Toy Story 2 for depth */
+    background-color: #777777;
+    color: #ffffff;
 }
 
 #content {
-    padding: 30px;
-    line-height: 1.8em; /* More spacing for dreamy readability */
-    background: rgba(34, 34, 34, 0.9); /* Semi-transparent dark */
-    border: 2px groove #4169E1; /* Royal Blue groove from Toy Story 2 */
-    box-shadow: inset 0 0 15px #ADD8E6, 0 0 25px #32CD32; /* Light Blue and Lime Green shadows */
-    -webkit-box-shadow: inset 0 0 15px #ADD8E6, 0 0 25px #32CD32;
-    -webkit-animation: fadeGlow 3s infinite alternate;
-    animation: fadeGlow 3s infinite alternate;
-}
-
-@-webkit-keyframes fadeGlow {
-    0% { opacity: 0.8; }
-    100% { opacity: 1; } /* Extreme fading glow for content */
-}
-
-@keyframes fadeGlow {
-    0% { opacity: 0.8; }
-    100% { opacity: 1; }
+    padding: 20px;
+    line-height: 1.5em;
+    background-color: #111111; /* Dark content area */
 }
 
 #content p {
-    margin-bottom: 20px;
-    color: #A5D8FF; /* Light Blue from Toy Story for text */
+    margin-bottom: 15px;
 }
 
 #content h2 {
-    color: #FF4500; /* Orange Red from Finding Nemo */
-    text-shadow: 0 0 10px #9370DB, 0 0 20px #99ccff; /* Purple and blue glows */
-    font-size: 28px; /* Larger for extreme headings */
-    border-bottom: 2px solid #B22222; /* Firebrick Red from The Incredibles */
-    padding-bottom: 10px;
+    color: #00ccff; /* Blue headings */
 }
 
 #footer {
-    border-top: 4px ridge #2364A1; /* Teal Blue ridge from A Bug's Life */
-    background: #3D2B1F; /* Dark Brown from A Bug's Life for earthy close */
-    padding: 15px;
+    background-color: #333333;
+    padding: 10px;
     text-align: center;
-    font-size: 12px;
-    color: #FFFACD; /* Lemon Yellow text */
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-    -webkit-animation: spinSlow 20s linear infinite;
-    animation: spinSlow 20s linear infinite;
-}
-
-@-webkit-keyframes spinSlow {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); } /* Extreme slow spin for footer fun */
-}
-
-@keyframes spinSlow {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    font-size: 10px;
+    color: #999999;
 }
 
 #footer a {
     color: #00ccff;
     text-decoration: none;
-    text-shadow: 0 0 5px #D2691E; /* Chocolate Brown glow from The Incredibles */
 }
 
 #footer a:hover {
-    text-decoration: underline wavy #90EE90; /* Wavy Light Green underline */
+    text-decoration: underline;
 }
 
 a {
-    color: #32CD32; /* Lime Green for links */
-    text-decoration: underline dotted #87CEEB; /* Dotted Sky Blue */
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+    color: #00ccff;
+    text-decoration: underline;
 }
 
 a:hover {
-    color: #FBE317; /* Yellow hover */
-    transform: scale(1.2); /* Extreme scale on hover */
-    display: inline-block;
-}
-
-a:visited {
-    color: #9370DB; /* Medium Purple visited */
+    text-decoration: none;
 }
