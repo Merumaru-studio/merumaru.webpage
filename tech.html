@@ -3,129 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Stuff – Our Setup</title>
+    <title>Tech Stuff</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="container">
-    <!-- Header -->
-    <header id="header">
+    <div id="header">
         <h1>Tech Stuff</h1>
-        <p class="subtitle">Our current workstations, software choices and production principles</p>
-    </header>
+    </div>
 
-    <!-- Navigation -->
-    <nav id="nav">
+    <div id="nav">
         <a href="index.html">Home</a>
         <a href="vision.html">Vision</a>
         <a href="tech.html">Tech Stuff</a>
         <a href="toilet.html">Toilet Thoughts</a>
-    </nav>
+    </div>
 
-    <!-- Main Content -->
-    <main id="content">
-        <section>
-            <h2>Workstations</h2>
+    <div id="content">
 
-            <article>
-                <h3>Workstation 1 – Lenovo Legion 5 Pro (2023)</h3>
-                <ul class="specs">
-                    <li>Processor: AMD Ryzen 7 7745HX</li>
-                    <li>GPU: NVIDIA GeForce RTX 4060</li>
-                    <li>RAM: Upgraded to 48 GB</li>
-                    <li>Primary software: Autodesk Maya 2026</li>
-                </ul>
-            </article>
+        <h3>(Workstation 1) Lenovo Legion 5 Pro (2023)</h3>
+        <p>Ryzen 7 7745HX</p>
+        <p>NVIDIA RTX 4060 GPU</p>
+        <p>Upgraded to 48GB RAM</p>
 
-            <article>
-                <h3>Workstation 2 – Lenovo Legion 7i (2024)</h3>
-                <ul class="specs">
-                    <li>Processor: Intel Core i9-14900HX (14th Generation)</li>
-                    <li>GPU: NVIDIA GeForce RTX 4060</li>
-                    <li>RAM: 32 GB</li>
-                </ul>
-            </article>
+        <h3>(Workstation 2) Lenovo Legion 7i (2024)</h3>
+        <p>Intel Core i9-14900HX (14th gen)</p>
+        <p>RTX 4060</p>
+        <p>32GB RAM</p>
 
-            <article>
-                <h3>Workstation 3 – Custom-Built Tower</h3>
-                <ul class="specs">
-                    <li>Processor: AMD Ryzen 7 5800X</li>
-                    <li>GPU: AMD Radeon RX 6800</li>
-                    <li>RAM: Currently 16 GB (limited due to shortage)</li>
-                    <li>Motherboard: NZXT B570 chipset</li>
-                </ul>
-                <p class="usage">
-                    This machine is mainly used for hosting our server, running NAS storage, and occasionally as a CPU render node. It may also support video editing tasks in post-production later.  
-                    <strong>Urgent upgrades needed:</strong> NVIDIA GPU (required for Arnold renderer compatibility) and significantly more RAM.
-                </p>
-            </article>
-        </section>
+        <h3>(Workstation 3) Self-built tower</h3>
+        <p>Ryzen 7 5800X</p>
+        <p>AMD Radeon RX 6800</p>
+        <p>Currently only 16GB RAM (because of RAM shortage)</p>
+        <p>NZXT B570 Mainboard</p>
+        <p>
+            We are using Workstation 3 mostly for hosting a server, Storage
+            and if necessary as one node for CPU rendering, maybe video editing 
+            in post production later on. 
+            It urgently needs to be upgraded with an Nvidia GPU (not because we want to, 
+            but because Arnold requires an Nvidia GPU) and it also urgently needs more RAM.
+        </p>
 
-        <section>
-            <h2>Planned Infrastructure Improvements</h2>
-            <p>
-                In the near future we intend to add a <strong>UGREEN NAS</strong> system to improve file accessibility, centralized storage and real-time collaboration when working together.
-            </p>
-        </section>
+        <h3>Future storage plans</h3>
+        <p>
+            In the close future we are thinking of getting a proper NAS, 
+            for better accesible and shareable files and storage solution. 
+            Especially for co working.
+        </p>
 
-        <section>
-            <h2>Production Tracking</h2>
-            <p>
-                We are still deciding on the best tracking solution.  
-                <strong>Autodesk Flow Production Tracking</strong> (formerly Shotgun) is our preferred choice due to its feature set, but the price is quite high.  
-                Most affordable alternatives currently lack important functionality we would need.
-            </p>
-        </section>
+        <h3>Tracking tool</h3>
+        <p>
+            As a tracking tool we are still deciding what to do. 
+            We like Autodesk Flow Production Tracking, though it is expensive (formerly shotgun), 
+            while the other viable options lack some features and also cost money.
+        </p>
 
-        <section>
-            <h2>Software Stack</h2>
+        <h3>Software choices</h3>
+        <p>
+            We decided to use Maya (Indie License), for two main reasons: 
+            We learned with maya during our study and learned to like it. 
+            At the same time we can instantly get support from Autodesk if something goes south, 
+            which can be (out of experience) quite helpful.
+        </p>
+        <p>
+            For everything 2D (meaning storyboards, concept art etc.) we use Clip studio Paint.
+        </p>
+        <p>
+            In Post production we will probably use Davinci Resolve.
+        </p>
+        <p>
+            For Texturing we are somewhat bound to Substance Painter, 
+            even though we solely disagree with almost all of their policies, 
+            we cant really find a reliable alternative. 
+            Maybe one day we will have something.
+        </p>
 
-            <h3>3D – Modeling, Animation & Rendering</h3>
-            <p>
-                <strong>Autodesk Maya (Indie license)</strong><br>
-                We chose Maya for two main reasons: we already learned and grew to love it during our studies, and Autodesk provides fast, direct support when critical issues arise (which — based on experience — can be extremely helpful).
-            </p>
+        <h3>Our AI policy</h3>
+        <p>
+            We have a strict policy against AI use in any part of our production pipeline, 
+            we believe using AI is destroying creativity in every way. 
+            We are not building Rockets or do science, also we learned grammar in school. 
+            Therefore we dont want and will also not use AI. Ever! 
+            That is a promise. 
+            Everything you will see, is purely made by us!
+        </p>
 
-            <h3>2D – Storyboards, Concept Art & Illustration</h3>
-            <p>Clip Studio Paint</p>
+        <h3>Why this setup?</h3>
+        <p>
+            We got our gear to study, it was not meant to produce movies. 
+            More professional gear is just incredibly expensive, 
+            that's why we will work with what we currently have. 
+            To make our Tools more stable, we are currently switching to Rocky Linux.
+        </p>
 
-            <h3>Post-Production & Color Grading</h3>
-            <p>DaVinci Resolve</p>
+    </div>
 
-            <h3>Texturing</h3>
-            <p>
-                Substance Painter (current standard)<br>
-                We strongly disagree with many of Adobe’s policies regarding this tool, but unfortunately we have not yet found a truly reliable, production-ready alternative. We hope this changes in the future.
-            </p>
-        </section>
-
-        <section class="important">
-            <h2>Strict No-AI Policy</h2>
-            <p class="highlight">
-                We have a strict policy against using AI in <strong>any</strong> part of our production pipeline.<br>
-                We believe AI destroys creativity rather than enhancing it.<br>
-                We are not building rockets or conducting scientific research — and we actually learned grammar in school.<br><br>
-                <strong>We do not want AI. We will not use AI. Ever.</strong><br>
-                That is a promise.<br>
-                Everything you see from us is 100% human-made.
-            </p>
-        </section>
-
-        <section>
-            <h2>Why This Setup?</h2>
-            <p>
-                Our current hardware was originally purchased for studying purposes — it was never intended to produce short films or animated projects at a professional level.<br>
-                Truly professional workstations and render nodes are prohibitively expensive for us at this stage.<br>
-                Therefore we are deliberately working with what we already own and continuously optimizing the software environment.<br>
-                As one important stability improvement we are currently migrating our main machines to <strong>Rocky Linux</strong>.
-            </p>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="footer">
+    <div id="footer">
         <a href="contact.html">Contact</a>
-    </footer>
+    </div>
 </div>
 </body>
 </html>
