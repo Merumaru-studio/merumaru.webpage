@@ -1,40 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Tech Stuff</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Stuff – Our Setup</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 <div id="container">
+    <!-- Header -->
+    <header id="header">
+        <h1>Tech Stuff</h1>
+        <p class="subtitle">Our current workstations, software choices and production principles</p>
+    </header>
 
-<div id="header">
-    <h1>Tech Stuff</h1>
-</div>
+    <!-- Navigation -->
+    <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="vision.html">Vision</a>
+        <a href="tech.html">Tech Stuff</a>
+        <a href="toilet.html">Toilet Thoughts</a>
+    </nav>
 
-<div id="nav">
-    <a href="index.html">Home</a>
-    <a href="vision.html">Vision</a>
-    <a href="tech.html">Tech Stuff</a>
-    <a href="toilet.html">Toilet Thoughts</a>
-</div>
+    <!-- Main Content -->
+    <main id="content">
+        <section>
+            <h2>Workstations</h2>
 
-<div id="content">
-    <h3>(Workstation 1) Lenovo Legion 5 Pro (2023)</h3>
-    <p>Ryzen 7 7745HX</p>
-    <p>NVIDIA RTX 4060 GPU</p>
-    <p>Maya 2026 (Autodesk)</p>
+            <article>
+                <h3>Workstation 1 – Lenovo Legion 5 Pro (2023)</h3>
+                <ul class="specs">
+                    <li>Processor: AMD Ryzen 7 7745HX</li>
+                    <li>GPU: NVIDIA GeForce RTX 4060</li>
+                    <li>RAM: Upgraded to 48 GB</li>
+                    <li>Primary software: Autodesk Maya 2026</li>
+                </ul>
+            </article>
 
-    <h3>Why?</h3>
-    <p>
-    We got our gear to study, it was not meant to produce movies. More professional gear is just incredibly expensive, that's why we will work with what we currently have. To make our Tools more stable, we are currently switching to Rocky Linux.
-    </p>
-</div>
+            <article>
+                <h3>Workstation 2 – Lenovo Legion 7i (2024)</h3>
+                <ul class="specs">
+                    <li>Processor: Intel Core i9-14900HX (14th Generation)</li>
+                    <li>GPU: NVIDIA GeForce RTX 4060</li>
+                    <li>RAM: 32 GB</li>
+                </ul>
+            </article>
 
-<div id="footer">
-    <a href="contact.html">Contact</a>
-</div>
+            <article>
+                <h3>Workstation 3 – Custom-Built Tower</h3>
+                <ul class="specs">
+                    <li>Processor: AMD Ryzen 7 5800X</li>
+                    <li>GPU: AMD Radeon RX 6800</li>
+                    <li>RAM: Currently 16 GB (limited due to shortage)</li>
+                    <li>Motherboard: NZXT B570 chipset</li>
+                </ul>
+                <p class="usage">
+                    This machine is mainly used for hosting our server, running NAS storage, and occasionally as a CPU render node. It may also support video editing tasks in post-production later.  
+                    <strong>Urgent upgrades needed:</strong> NVIDIA GPU (required for Arnold renderer compatibility) and significantly more RAM.
+                </p>
+            </article>
+        </section>
 
+        <section>
+            <h2>Planned Infrastructure Improvements</h2>
+            <p>
+                In the near future we intend to add a <strong>UGREEN NAS</strong> system to improve file accessibility, centralized storage and real-time collaboration when working together.
+            </p>
+        </section>
+
+        <section>
+            <h2>Production Tracking</h2>
+            <p>
+                We are still deciding on the best tracking solution.  
+                <strong>Autodesk Flow Production Tracking</strong> (formerly Shotgun) is our preferred choice due to its feature set, but the price is quite high.  
+                Most affordable alternatives currently lack important functionality we would need.
+            </p>
+        </section>
+
+        <section>
+            <h2>Software Stack</h2>
+
+            <h3>3D – Modeling, Animation & Rendering</h3>
+            <p>
+                <strong>Autodesk Maya (Indie license)</strong><br>
+                We chose Maya for two main reasons: we already learned and grew to love it during our studies, and Autodesk provides fast, direct support when critical issues arise (which — based on experience — can be extremely helpful).
+            </p>
+
+            <h3>2D – Storyboards, Concept Art & Illustration</h3>
+            <p>Clip Studio Paint</p>
+
+            <h3>Post-Production & Color Grading</h3>
+            <p>DaVinci Resolve</p>
+
+            <h3>Texturing</h3>
+            <p>
+                Substance Painter (current standard)<br>
+                We strongly disagree with many of Adobe’s policies regarding this tool, but unfortunately we have not yet found a truly reliable, production-ready alternative. We hope this changes in the future.
+            </p>
+        </section>
+
+        <section class="important">
+            <h2>Strict No-AI Policy</h2>
+            <p class="highlight">
+                We have a strict policy against using AI in <strong>any</strong> part of our production pipeline.<br>
+                We believe AI destroys creativity rather than enhancing it.<br>
+                We are not building rockets or conducting scientific research — and we actually learned grammar in school.<br><br>
+                <strong>We do not want AI. We will not use AI. Ever.</strong><br>
+                That is a promise.<br>
+                Everything you see from us is 100% human-made.
+            </p>
+        </section>
+
+        <section>
+            <h2>Why This Setup?</h2>
+            <p>
+                Our current hardware was originally purchased for studying purposes — it was never intended to produce short films or animated projects at a professional level.<br>
+                Truly professional workstations and render nodes are prohibitively expensive for us at this stage.<br>
+                Therefore we are deliberately working with what we already own and continuously optimizing the software environment.<br>
+                As one important stability improvement we are currently migrating our main machines to <strong>Rocky Linux</strong>.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <a href="contact.html">Contact</a>
+    </footer>
 </div>
 </body>
 </html>
