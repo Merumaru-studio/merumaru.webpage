@@ -1,116 +1,156 @@
+/* merumaru - 2005 Edition */
 body {
-    background-color: #000000; /* Black background typical for early 2000s Pixar site */
-    color: #ffffff; /* White text */
-    font-family: Helvetica, Arial, sans-serif; /* Common font for 2005 sites */
+    background-color: #050510; /* Deep night sky */
+    background-image: radial-gradient(circle at 50% 0%, #1a2a40 0%, #050510 70%);
+    color: #e0e0e0;
+    font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    font-size: 12px; /* Retro small font */
+    padding: 20px 0;
+    font-size: 13px;
 }
 
 #container {
-    width: 800px; /* Fixed width centered layout, common in 2005 */
+    width: 800px;
     margin: 0 auto;
-    background-color: #000000;
-    border: none; /* No borders for simple look */
+    background-color: #111111;
+    border: 2px solid #333;
+    border-radius: 8px; /* Slight rounding for that early Mac OS X / XP feel */
+    box-shadow: 0px 0px 20px rgba(0, 162, 255, 0.2);
 }
 
 #header {
-    background-color: #000000;
-    padding: 20px;
+    background-color: #000;
+    padding: 30px 20px;
     text-align: center;
+    border-bottom: 3px solid #005588;
+    position: relative;
 }
 
 #header h1 {
     margin: 0;
-    font-size: 48px;
+    font-size: 52px;
     color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
+    text-shadow: 2px 2px 0px #005588;
+    letter-spacing: 3px;
 }
 
-#header h1::after {
-    content: '';
+/* The bouncing 'i' or letter animation */
+.bounce {
     display: inline-block;
-    width: 0;
-    height: 0;
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: url('lamp.gif') no-repeat; /* Would have a lamp image or GIF for bouncing animation */
-    /* For text approximation, use CSS animation for bouncing 'i' */
+    animation: bounce 1.5s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+    color: #ffcc00; /* Pixar Yellow accent */
 }
 
-#header h1 span.bounce {
-    display: inline-block;
-    animation: bounce 2s infinite;
-}
-
-@-keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-30px);}
-    60% {transform: translateY(-15px);}
+@keyframes bounce {
+    0%, 100% { transform: scale(1, 1) translateY(0); }
+    10% { transform: scale(1.1, 0.9) translateY(0); }
+    30% { transform: scale(0.9, 1.1) translateY(-35px); }
+    50% { transform: scale(1.05, 0.95) translateY(0); }
+    57% { transform: scale(1, 1) translateY(-7px); }
+    64% { transform: scale(1, 1) translateY(0); }
 }
 
 #nav {
-    background-color: #333333; /* Dark gray for nav bar */
-    padding: 10px;
+    background-color: #222;
+    padding: 12px;
     text-align: center;
+    border-bottom: 1px solid #444;
 }
 
 #nav a {
-    color: #00ccff; /* Blue links */
-    margin: 0 10px;
+    color: #ffffff;
+    margin: 0 5px;
     text-decoration: none;
     font-weight: bold;
-    padding: 5px 10px;
-    background-color: #555555; /* Gray buttons */
-    border: 1px solid #777777;
-    border-radius: 3px; /* Slight round for button look */
+    font-size: 14px;
+    padding: 4px 12px;
+    background-color: #005588;
+    border: 2px outset #0077bb; /* Classic 2000s 3D button */
+}
+
+#nav a:active {
+    border: 2px inset #0077bb; /* Button press effect */
 }
 
 #nav a:hover {
-    background-color: #777777;
-    color: #ffffff;
+    background-color: #0077bb;
+    color: #ffcc00;
+}
+
+marquee {
+    background-color: #002244;
+    color: #00ccff;
+    padding: 3px;
+    font-family: monospace;
+    font-size: 11px;
+    border-bottom: 1px dashed #005588;
 }
 
 #content {
-    padding: 20px;
-    line-height: 1.5em;
-    background-color: #111111; /* Dark content area */
+    padding: 30px;
+    line-height: 1.6em;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFElEQVQIW2NkYGD4z8DAwMgAI0AMDA4LA/4D5zMAAAAASUVORK5CYII='); /* Subtle scanline texture */
 }
 
-#content p {
-    margin-bottom: 15px;
+h2, h3 {
+    color: #00ccff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
 }
 
-#content h2 {
-    color: #00ccff; /* Blue headings */
+.ai-policy {
+    background-color: #330000;
+    border: 2px solid #ff3333;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ai-policy h2 {
+    color: #ff5555;
+    border: none;
+    margin-top: 0;
+}
+
+/* Retro Table Styles for Tech & Forum */
+table.retro-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #1a1a1a;
+}
+
+table.retro-table th {
+    background-color: #004466;
+    color: white;
+    padding: 8px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+table.retro-table td {
+    padding: 8px;
+    border: 1px solid #333;
 }
 
 #footer {
-    background-color: #333333;
-    padding: 10px;
+    background-color: #111;
+    padding: 20px;
     text-align: center;
-    font-size: 10px;
-    color: #999999;
+    font-size: 11px;
+    color: #777;
+    border-top: 2px solid #333;
 }
 
 #footer a {
     color: #00ccff;
-    text-decoration: none;
 }
 
-#footer a:hover {
-    text-decoration: underline;
-}
-
-a {
-    color: #00ccff;
-    text-decoration: underline;
-}
-
-a:hover {
-    text-decoration: none;
+.hit-counter {
+    font-family: "Courier New", Courier, monospace;
+    background: #000;
+    color: #0f0;
+    padding: 2px 5px;
+    border: 1px inset #555;
+    letter-spacing: 2px;
 }
