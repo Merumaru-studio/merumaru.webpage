@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>merumaru - Animations</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="marulogo1.ico" type="image/x-icon">
+    <style>
+    /* --- The Reel --- */
+    #reel-head { display:flex; justify-content:space-between; align-items:baseline; gap:12px; border-bottom:1px solid #333; padding-bottom:5px; margin-bottom:6px; }
+    #reel-head h2 { margin:0; border:none; padding:0; font-size:22px; }
+    #feed-status { font-family:"Courier New",monospace; font-size:11px; color:#777; }
+    #reel { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .reel-card { position:relative; min-width:0; background:#000; border:2px outset #0077bb; padding:4px;
+        transition:transform .25s cubic-bezier(.28,.84,.42,1), box-shadow .25s ease, border-color .2s ease; }
+    .reel-card:hover { transform:translateY(-8px) scale(1.04); border-color:#ffcc00; z-index:5;
+        box-shadow:0 12px 28px rgba(0,0,0,.7), 0 0 22px rgba(0,204,255,.55); }
+    .reel-card:active { border-style:inset; }
+    .reel-screen { position:relative; aspect-ratio:9/16; overflow:hidden; background:#050510; }
+    .reel-screen iframe { position:absolute; top:50%; left:50%; width:100%; height:100%;
+        transform:translate(-50%,-50%) scale(1.02); border:0; pointer-events:none; }
+    .scanlines { position:absolute; inset:0; pointer-events:none; animation:scan 6s linear infinite;
+        background:repeating-linear-gradient(to bottom, rgba(0,0,0,.22) 0 1px, transparent 1px 3px); }
+    @keyframes scan { from { background-position:0 0; } to { background-position:0 100px; } }
+    .reel-watch { position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:center;
+        padding-bottom:14px; text-decoration:none; opacity:0; transition:opacity .2s ease;
+        background:linear-gradient(to top, rgba(0,34,68,.85) 0%, rgba(0,0,0,0) 55%); }
+    .reel-watch:hover { opacity:1; }
+    .reel-watch span { background:#005588; border:2px outset #0077bb; color:#ffcc00; font-weight:bold; font-size:12px; padding:4px 10px; }
+    .reel-title { padding:7px 4px 3px; font-size:11px; color:#e0e0e0; font-weight:bold;
+        overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .reel-meta { padding:0 4px 4px; font-family:"Courier New",monospace; font-size:10px; color:#00ccff; }
+    #channel-box { margin-top:26px; background-color:#1a1a1a; border:2px solid #333; padding:14px;
+        display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+    #channel-box b { color:#ffcc00; display:block; margin-bottom:2px; }
+    #channel-box small { color:#888; font-size:11px; }
+    #channel-box a { color:#fff; text-decoration:none; font-weight:bold; font-size:14px; padding:5px 14px;
+        background-color:#005588; border:2px outset #0077bb; white-space:nowrap; }
+    #channel-box a:hover { background-color:#0077bb; color:#ffcc00; }
+    #channel-box a:active { border:2px inset #0077bb; }
+    @media (max-width: 840px) { #container { width:auto; margin:0 10px; } #reel { grid-template-columns:repeat(2,1fr); } }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Animati<span class="bounce">o</span>ns</h1>
+    </div>
+
+    <div id="nav">
+        <a href="index.html">Home</a>
+        <a href="vision.html">Vision</a>
+        <a href="animations.html">Animations</a>
+        <a href="tech.html">Tech Stuff</a>
+        <a href="toilet.html">Toilet Thoughts</a>
+        <a href="forum.html">Forum</a>
+    </div>
+
+    <marquee scrollamount="3" id="ticker">Loading the reel from the merumaru channel... || all frames drawn by human hands ||</marquee>
+
+    <div id="content">
+        <div id="reel-head">
+            <h2>The Reel</h2>
+            <span id="feed-status">[ connecting to feed... ]</span>
+        </div>
+        <p style="color:#aaa;">
+            Everything below is animated by hand, frame by frame, by us. No AI.
+            Pulled live from the merumaru channel &mdash; muted and looping, click any panel to watch it big.
+        </p>
+
+        <div id="reel"></div>
+
+        <div id="channel-box">
+            <div>
+                <b>More on the channel</b>
+                <small>New shorts appear here on their own, straight from the uploads feed.</small>
+            </div>
+            <a href="https://www.youtube.com/@merumaru-animation" target="_blank" rel="noopener">@merumaru-animation</a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p><a href="contact.html">Contact Us</a> | <a href="guestbook.html">Sign the Guestbook</a></p>
+        <p>Animations served: <span class="hit-counter" id="counter">000000</span></p>
+        <p>&copy; 2026 merumaru animation. Best viewed in 800x600 resolution.</p>
+    </div>
+</div>
+
+<script>
+/* Fallback list: add a video ID here and it shows up even if the feed is down. */
+var SEED = ["LVyPRqDBpHg", "8JgQ9bPoKiI", "Uey3Jq0jvU4", "61YHY-bGfRM"];
+var CHANNEL_ID = "UCIuk8h-RNk9g_8J-X0Mp1vA";
+var MAX = 12;
+
+function embedUrl(id) {
+    return "https://www.youtube-nocookie.com/embed/" + id +
+        "?autoplay=1&mute=1&loop=1&playlist=" + id +
+        "&controls=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&fs=0&iv_load_policy=3";
+}
+
+function render(items) {
+    var reel = document.getElementById("reel");
+    reel.innerHTML = "";
+    items.slice(0, MAX).forEach(function (v, i) {
+        var card = document.createElement("div");
+        card.className = "reel-card";
+        card.innerHTML =
+            '<div class="reel-screen">' +
+                '<iframe src="' + embedUrl(v.id) + '" title="' + v.title.replace(/"/g, "&quot;") + '" ' +
+                    'allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen frameborder="0"></iframe>' +
+                '<div class="scanlines"></div>' +
+                '<a class="reel-watch" href="https://www.youtube.com/shorts/' + v.id + '" target="_blank" rel="noopener"><span>watch &#9654;</span></a>' +
+            '</div>' +
+            '<div class="reel-title"></div>' +
+            '<div class="reel-meta"></div>';
+        card.querySelector(".reel-title").textContent = v.title;
+        card.querySelector(".reel-meta").textContent = (v.date || "merumaru") + "  \u00b7  no." + String(i + 1).padStart(2, "0");
+        reel.appendChild(card);
+    });
+    document.getElementById("counter").textContent = String(items.length).padStart(6, "0");
+    document.getElementById("ticker").innerHTML = "now playing: " +
+        items.slice(0, MAX).map(function (v) { return v.title; }).join("  ||  ") +
+        "  ||  all frames drawn by human hands  ||  ";
+}
+
+function parseFeed(xml) {
+    var doc = new DOMParser().parseFromString(xml, "text/xml");
+    var entries = doc.getElementsByTagName("entry");
+    var out = [];
+    for (var i = 0; i < entries.length; i++) {
+        var e = entries[i];
+        var idEl = e.getElementsByTagName("yt:videoId")[0] || e.getElementsByTagName("videoId")[0];
+        if (!idEl) continue;
+        var t = e.getElementsByTagName("title")[0];
+        var p = e.getElementsByTagName("published")[0];
+        out.push({
+            id: idEl.textContent.trim(),
+            title: t ? t.textContent.trim() : "untitled",
+            date: p ? p.textContent.slice(0, 10) : ""
+        });
+    }
+    return out;
+}
+
+async function loadFeed() {
+    var feed = "https://www.youtube.com/feeds/videos.xml?channel_id=" + CHANNEL_ID;
+    var proxies = [
+        "https://api.allorigins.win/raw?url=" + encodeURIComponent(feed),
+        "https://corsproxy.io/?" + encodeURIComponent(feed),
+        "https://r.jina.ai/" + feed
+    ];
+    for (var i = 0; i < proxies.length; i++) {
+        try {
+            var res = await fetch(proxies[i]);
+            if (!res.ok) continue;
+            var items = parseFeed(await res.text());
+            if (items.length) {
+                render(items);
+                document.getElementById("feed-status").textContent = "[ feed live \u2014 " + items.length + " uploads ]";
+                return;
+            }
+        } catch (err) { /* try next proxy */ }
+    }
+    document.getElementById("feed-status").textContent = "[ feed offline \u2014 showing saved list ]";
+}
+
+render(SEED.map(function (id, i) {
+    return { id: id, title: "animation " + String(i + 1).padStart(2, "0"), date: "" };
+}));
+loadFeed();
+</script>
+</body>
+</html>
